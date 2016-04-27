@@ -1,0 +1,23 @@
+{
+  "name": "ray_ray_monument",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caravel2/RayRayMonument.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caravel2/RayRayMonument/issues"
+  },
+  "homepage": "https://github.com/Caravel2/RayRayMonument#readme",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1"
+  }
+}
