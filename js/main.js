@@ -1,18 +1,34 @@
 $(document).ready(function(){
 
-    // IMG_2691
-    // var imgNames = [
-    //                   'img/IMG_2691.jpg','img/IMG_2692.jpg','img/IMG_2693.jpg',
+    
+    var dateArr = [
+                      '2012.10.01','2012.12.01','2013.01.01',
                       
-    //                   'img/IMG_2694.jpg','img/IMG_2695.jpg','img/IMG_2696.jpg',
+                      '2013.10.22','2013.11.16','2014.01.04',
 
-    //                   'img/IMG_2697.jpg','img/IMG_2698.jpg','img/IMG_2699.jpg',
+                      '2015.12.07','2015.05.08','2015.11.12',
 
-    //                   'img/IMG_2700.jpg'
-    //                ];
+                      '2016.05.18'
+                   ];
 
 
-    $('.gallery_box').unslider();
+    var slider = $('.gallery_box').unslider({
+
+        autoplay:false,
+        nav:false,
+        animation:'fade'
+
+    });
+
+
+    slider.on('unslider.change', function(event, index, slide) {
+      
+
+      $(".time_text").text(dateArr[index]);
+
+
+
+    });
 
 
     $(".gallery_box").click(function(e){
@@ -21,10 +37,13 @@ $(document).ready(function(){
 
         if(e.pageX > 485){
 
+            slider.unslider('next');
           console.log("右半邊！");
 
-        }else if(e.pageX <= 485){
 
+
+        }else if(e.pageX <= 485){
+            slider.unslider('prev');
           console.log("左半邊！");
 
         }else{
