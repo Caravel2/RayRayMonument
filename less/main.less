@@ -1,0 +1,214 @@
+
+//-----------  BASIC  -----------//
+
+.center{
+
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.square(@width){
+  
+  height: @width;
+  width: @width;
+  
+}
+
+
+.circle(@width){
+  
+  height: @width;
+  width: @width;
+  border-radius: 99em;
+  
+}
+
+
+
+
+
+.main_container{
+  
+
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  top: 200px;
+  text-align: center;
+
+
+}
+
+
+.main_h1{
+
+  font-size: 40px;
+  color: #fff;
+}
+
+
+
+.time_box{
+  
+  .center;
+  position: relative;
+  width: 80%;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+
+  span{
+    
+    font-family: "lato", sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 10px;
+    color:#fff;
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+}
+
+
+
+
+
+.gallery_box{
+  
+  .center;
+  width: 400px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-image: url(../images/yy.jpg);
+  background-size: cover;
+    
+}
+
+
+.button_box{
+  
+  .center;
+  .square(40px);
+  margin-top: 60px;
+  
+  
+  .heart_fading{
+    
+    .circle(40px);
+    position: absolute;
+    background-color: #abc;
+    
+
+  }
+  .heart_btn{
+
+    .circle(40px);
+    background-color: #abc;
+    font-size: 20px;
+    text-align: center;
+    color:crimson;
+
+  }
+
+  i {
+
+    padding-top: 11px;
+  }
+
+}
+
+
+
+
+
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+
+/*-------   光暈效果   --------*/
+
+.pulsate{
+
+    animation-name: pulsate;
+    -webkit-animation-name: pulsate;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+
+}
+
+
+@-webkit-keyframes pulsate{
+    0% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.4, 1.4);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes pulsate{
+    0% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.4, 1.4);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes pulsate{
+    0% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.4, 1.4);
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes pulsate{
+    0% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.4, 1.4);
+        opacity: 0;
+    }
+}
+

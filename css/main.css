@@ -1,0 +1,136 @@
+/*-------   光暈效果   --------*/
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.main_container {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  top: 200px;
+  text-align: center;
+}
+.main_h1 {
+  font-size: 40px;
+  color: #fff;
+}
+.time_box {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 80%;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.time_box span {
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: 10px;
+  color: #fff;
+  background: -webkit-linear-gradient(#ffffff, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gallery_box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-image: url(../images/yy.jpg);
+  background-size: cover;
+}
+.button_box {
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 40px;
+  margin-top: 60px;
+}
+.button_box .heart_fading {
+  height: 40px;
+  width: 40px;
+  border-radius: 99em;
+  position: absolute;
+  background-color: #abc;
+}
+.button_box .heart_btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 99em;
+  background-color: #abc;
+  font-size: 20px;
+  text-align: center;
+  color: crimson;
+}
+.button_box i {
+  padding-top: 11px;
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*-------   光暈效果   --------*/
+.pulsate {
+  animation-name: pulsate;
+  -webkit-animation-name: pulsate;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes pulsate {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
+@-moz-keyframes pulsate {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
+@-o-keyframes pulsate {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
+@-ms-keyframes pulsate {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
