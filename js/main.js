@@ -1,6 +1,63 @@
 $(document).ready(function(){
 
+    //-------- gradient transition by time --------//
+
+
+
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+    var hour = dt.getHours()
+
+
+    console.log("time",time);
+
+    //白天
+    if(hour>=6 && hour<18){
+
+      $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%)'});
+      $(".time_text").css({ 
+                              'background':'linear-gradient(#38495a, #38495a)',
+                              '-webkit-background-clip':'text' 
+
+                      });
+      
+
+
+      }
     
+
+    //下午
+    // else if(hour>=13 && hour<18){
+
+    //   $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)'});
+    //   $(".time_text").css({ 
+    //                           'background':'linear-gradient(#38495a, #38495a)',
+    //                           '-webkit-background-clip':'text' 
+
+    //                   });
+    // }
+
+
+    //晚上
+    else{
+
+      $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)'});
+      $(".time_text").css({ 
+                              'background':'linear-gradient(#38495a, #fff)',
+                              '-webkit-background-clip':'text' 
+
+                      });
+
+
+    }
+
+
+
+
+
+
+
+    //-------- gallery box --------//
     var dateArr = [
                       '2012.10.01','2012.12.01','2013.01.01',
                       
@@ -16,6 +73,7 @@ $(document).ready(function(){
 
         autoplay:false,
         nav:false,
+        arrows:false,
         animation:'fade'
 
     });
