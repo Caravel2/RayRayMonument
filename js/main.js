@@ -81,7 +81,7 @@ $(document).ready(function(){
 
     slider.on('unslider.change', function(event, index, slide) {
       
-
+      console.log(index);
       $(".time_text").text(dateArr[index]);
 
 
