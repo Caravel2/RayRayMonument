@@ -105,6 +105,7 @@
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   line-break: auto;
+  cursor: default;
 }
 .animated {
   -webkit-animation-duration: 1s;

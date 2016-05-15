@@ -128,6 +128,7 @@ $(document).ready(function(){
 
           console.log("按了2秒鐘");
           $('.my-popover').addClass('animated fadeInRight');
+          $('.my-popover').css('cursor','pointer');
           $('.heart_fading').addClass('animated pulsate');
           $('.heart_btn').addClass('blink');
           // $(this).popover('show'); 
@@ -140,6 +141,20 @@ $(document).ready(function(){
 
 
 
+
+    $('.my-popover').click(function(e){
+
+        if($(this).css("opacity") == 1){
+            console.log("該關了");
+            $(this).removeClass('animated fadeInRight')
+                   .animate({ opacity : '0' });
+          $('.my-popover').css('cursor','default');
+
+        }
+        
+
+
+    });
 
 
 
