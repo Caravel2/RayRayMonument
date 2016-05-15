@@ -112,8 +112,31 @@ $(document).ready(function(){
 
     });
 
+    
 
 
+    var pressTimer
+
+    $(".button_box").mouseup(function(){
+      clearTimeout(pressTimer)
+      // Clear timeout
+      return false;
+    }).mousedown(function(){
+      // Set timeout
+      pressTimer = window.setTimeout(function() {
+
+
+          console.log("按了2秒鐘");
+          $('.my-popover').addClass('animated fadeInRight');
+          $('.heart_fading').addClass('animated pulsate');
+          $('.heart_btn').addClass('blink');
+          // $(this).popover('show'); 
+
+
+
+      },2000)
+      return false; 
+    });
 
 
 

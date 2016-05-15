@@ -28,6 +28,8 @@
 
 
 
+
+
 .main_container{
   
 
@@ -56,7 +58,7 @@
   width: 80%;
   height: 50px;
   text-align: center;
-  cursor: pointer;
+  cursor: default;
 
   .time_text{
     
@@ -116,6 +118,8 @@
   .heart_btn{
 
     .circle(40px);
+    position: relative;
+    padding-top: 7px;
     background-color: #abc;
     font-size: 20px;
     text-align: center;
@@ -123,14 +127,43 @@
 
   }
 
-  i {
-
-    padding-top: 11px;
-  }
-
 }
 
+.my-popover{
 
+    position: relative;
+    top: -38px;
+    left: 100px;
+    z-index: 1060;
+    display: inline-block;
+    opacity: 0;
+    max-width: 276px;
+    padding: 7px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: normal;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    line-break: auto;
+}
 
 
 
@@ -220,4 +253,84 @@
         opacity: 0;
     }
 }
+
+
+.blink{
+
+    animation-name: blink;
+    -webkit-animation-name: blink;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+     
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+
+}
+
+
+@-webkit-keyframes blink{
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink{
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes blink{
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes blink{
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
