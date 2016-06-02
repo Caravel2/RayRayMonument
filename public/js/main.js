@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     var dt = new Date();
     var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-    var hour = dt.getHours()
+    var hour = dt.getHours();
 
 
     console.log("time",time);
@@ -27,10 +27,6 @@ $(document).ready(function(){
                               '-webkit-background-clip':'text' 
 
                       });
-      
-
-  
-
       }
     
 
@@ -103,13 +99,13 @@ $(document).ready(function(){
         if(e.pageX > 485){
 
             slider.unslider('next');
-          console.log("右半邊！");
+          // console.log("右半邊！");
 
 
 
         }else if(e.pageX <= 485){
             slider.unslider('prev');
-          console.log("左半邊！");
+          // console.log("左半邊！");
 
         }else{
 
@@ -152,7 +148,7 @@ $(document).ready(function(){
     $('.my-popover').click(function(e){
 
         if($(this).css("opacity") == 1){
-            console.log("該關了");
+            // console.log("該關了");
             $(this).removeClass('animated fadeInRight')
                    .animate({ opacity : '0' });
           $('.my-popover').css('cursor','default');
