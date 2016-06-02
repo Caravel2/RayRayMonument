@@ -25,6 +25,13 @@
 }
 
 
+.pos_square(@px){
+
+  top: @px;
+  left: @px;
+  right: @px;
+  bottom: @px;
+}
 
 
 //-----------  正題  -----------//
@@ -88,21 +95,44 @@ body{
 .gallery_box{
   
   .center;
-  width: 400px;
-  height: 300px;
+  .square(300px);
   margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  // border-radius: 10px;
+  // box-shadow: 0 4px 6px rgba(0,0,0,.1);
   // background-image: url(../images/yy.jpg);
   // background-size: cover;
-
-  img{
+  
+  li{
     
-    background-size: cover;
-    width: 400px;
-    border-radius: 10px !important;
+      div{
+
+        .circle(300px);
+        background-size: cover;
+        border: 9px solid #C4CCD2;
+        overflow: hidden;
+        
+      }
+      
+      div:before {
+
+        .pos_square(7px);
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        border-radius: 99em;
+        border: 5px solid #fff;
+        z-index: 5;
+      }
 
   }
+
+  .pic_0{ background-image: url(../img/miao_0.jpg); }
+  .pic_1{ background-image: url(../img/miao_1.jpg); }
+  .pic_2{ background-image: url(../img/miao_2.jpg); }
+  .pic_3{ background-image: url(../img/miao_3.jpg); }
+  .pic_4{ background-image: url(../img/miao_4.jpg); }
+  .pic_5{ background-image: url(../img/miao_5.jpg); }
+  .pic_6{ background-image: url(../img/miao_6.jpg); }
     
 }
 

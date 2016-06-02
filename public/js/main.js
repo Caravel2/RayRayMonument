@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+
+
+    //-------- 雲端照片 --------//
+    
+    
+
+
     //-------- gradient transition by time --------//
 
 
