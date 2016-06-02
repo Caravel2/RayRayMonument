@@ -16,7 +16,14 @@
     "url": "https://github.com/Caravel2/RayRayMonument/issues"
   },
   "homepage": "https://github.com/Caravel2/RayRayMonument#readme",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^1.2.0",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "mustache": "^2.2.1"
+  },
   "devDependencies": {
     "bower": "^1.7.9",
     "grunt": "^1.0.1"
