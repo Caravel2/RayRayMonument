@@ -12,6 +12,84 @@ $(document).ready(function(){
 
 
 
+    //-------- 幫忙animate星星 --------//
+
+
+    AnimateTranslate (-2000,"infinite");
+    AnimateTranslate2(-2000,"infinite");
+    AnimateTranslate3(-2000,"infinite");
+
+
+
+    function AnimateTranslate(angle,repeat) {
+        var duration= 50000;
+        setTimeout(function() {
+            if(repeat && repeat == "infinite") {
+                AnimateTranslate(angle,repeat);
+            } else if ( repeat && repeat > 1) {
+                AnimateTranslate(angle, repeat-1);
+            }
+        },duration)    
+        var $elem = $('#stars');
+
+        $({deg: 0}).animate({deg: angle}, {
+            duration: duration,
+            step: function(now) {
+                $elem.css({
+                    'transform': 'translatey('+ now +'px)'
+                });
+            }
+        });
+    }
+
+    function AnimateTranslate2(angle,repeat) {
+        var duration= 100000;
+        setTimeout(function() {
+            if(repeat && repeat == "infinite") {
+                AnimateTranslate(angle,repeat);
+            } else if ( repeat && repeat > 1) {
+                AnimateTranslate(angle, repeat-1);
+            }
+        },duration)    
+        var $elem = $('#stars2');
+
+        $({deg: 0}).animate({deg: angle}, {
+            duration: duration,
+            step: function(now) {
+                $elem.css({
+                    'transform': 'translatey('+ now +'px)'
+                });
+            }
+        });
+    }
+
+    function AnimateTranslate3(angle,repeat) {
+        var duration= 150000;
+        setTimeout(function() {
+            if(repeat && repeat == "infinite") {
+                AnimateTranslate(angle,repeat);
+            } else if ( repeat && repeat > 1) {
+                AnimateTranslate(angle, repeat-1);
+            }
+        },duration)    
+        var $elem = $('#stars3');
+
+        $({deg: 0}).animate({deg: angle}, {
+            duration: duration,
+            step: function(now) {
+                $elem.css({
+                    'transform': 'translatey('+ now +'px)'
+                });
+            }
+        });
+    }
+    
+    
+
+
+
+
+
 
 
     //-------- 預load照片 --------//
@@ -20,6 +98,11 @@ $(document).ready(function(){
     $('.pic_0').preload(function(){
         $(this).show();
     });
+
+
+
+
+
 
 
 
@@ -93,7 +176,7 @@ $(document).ready(function(){
 
     var slider = $('.gallery_box').unslider({
 
-        autoplay:false,
+        autoplay:true,
         nav:false,
         arrows:false,
         animation:'fade'
