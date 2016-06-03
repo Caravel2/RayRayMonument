@@ -1,9 +1,13 @@
 
 .animation(@val){
 
-  animation: @val;
+  
   -webkit-animation: @val;
-
+  -moz-animation: @val;
+  -ms-animation: @val;
+  -o-animation: @val;
+  animation: @val;
+  
 }
 
 
@@ -113,12 +117,30 @@ html {
 }
 
 
-@-webkit-keyframes animStar {
+@-moz-keyframes animStar {
   from {
-    transform: translateY(0px);
+    transform: translatey(0px);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translatey(-2000px);
+  }
+}
+
+@-webkit-keyframes animStar {
+  from {
+    transform: translatey(0px);
+  }
+  to {
+    transform: translatey(-2000px);
+  }
+}
+
+@-o-keyframes animStar {
+  from {
+    transform: translatey(0px);
+  }
+  to {
+    transform: translatey(-2000px);
   }
 }
 
