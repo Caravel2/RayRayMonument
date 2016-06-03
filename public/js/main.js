@@ -1,6 +1,20 @@
 $(document).ready(function(){
 
 
+    //-------- 預load照片 --------//
+    
+    $('.pic_0').preload(function(){
+        $(this).show();
+      });
+
+
+    // $.preload( 
+
+    //     '../img/miao_0.jpg','../img/miao_1.jpg','../img/miao_2.jpg',
+    //     '../img/miao_3.jpg','../img/miao_4.jpg','../img/miao_5.jpg',
+    //     '../img/miao_6.jpg'
+    
+    // );
 
    
 
@@ -157,15 +171,7 @@ $(document).ready(function(){
     });
 
 
-    //-------- 預load照片 --------//
-    
-    $.preload( 
 
-        '../img/miao_0.jpg','../img/miao_1.jpg','../img/miao_2.jpg',
-        '../img/miao_3.jpg','../img/miao_4.jpg','../img/miao_5.jpg',
-        '../img/miao_6.jpg'
-    
-    );
 
 
 

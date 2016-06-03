@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 
-app.set('env','development_aws');
-// app.set('env','development_local');
+// app.set('env','development_aws');
+app.set('env','development_local');
 // app.set('env','development_heroku');
 
 if('development_local' == app.get('env')){
@@ -14,7 +14,7 @@ if('development_local' == app.get('env')){
   var port = process.env.PORT || 8060;
 }
 
-var mounment = require('./controllers/mounment');
+var monument = require('./controllers/monument');
 var bodyParser = require('body-parser');
 
 app.set('port',process.env.PROT || port);
@@ -30,7 +30,7 @@ app.set('view engine', 'ejs');
 app.use('/public',express.static( __dirname + '/public'));
 
 
-app.get('/',mounment.index);
+app.get('/',monument.index);
 app.listen(port, host);
 
 console.log("Express server listening on port %d",port);
