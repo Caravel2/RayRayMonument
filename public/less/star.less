@@ -7,7 +7,7 @@
   -ms-animation: @val;
   -o-animation: @val;
   animation: @val;
-  
+
 }
 
 
@@ -109,9 +109,11 @@ html {
 
 @keyframes animStar {
   from {
+    -webkit-transform: translateY(0px);
     transform: translateY(0px);
   }
   to {
+    -webkit-transform: translateY(-2000px);
     transform: translateY(-2000px);
   }
 }
@@ -119,27 +121,33 @@ html {
 
 @-moz-keyframes animStar {
   from {
+    -webkit-transform: translatey(0px);
     transform: translatey(0px);
   }
   to {
+    -webkit-transform: translatey(-2000px);
     transform: translatey(-2000px);
   }
 }
 
 @-webkit-keyframes animStar {
   from {
+    -webkit-transform: translatey(0px);
     transform: translatey(0px);
   }
   to {
+    -webkit-transform: translatey(-2000px);
     transform: translatey(-2000px);
   }
 }
 
 @-o-keyframes animStar {
   from {
+    -webkit-transform: translatey(0px);
     transform: translatey(0px);
   }
   to {
+    -webkit-transform: translatey(-2000px);
     transform: translatey(-2000px);
   }
 }

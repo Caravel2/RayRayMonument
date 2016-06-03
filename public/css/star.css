@@ -90,33 +90,41 @@ html {
 }
 @keyframes animStar {
   from {
-    transform: translateY(0px);
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
   }
   to {
-    transform: translateY(-2000px);
+    -webkit-transform: translatey(-2000px);
+    transform: translatey(-2000px);
   }
 }
 @-moz-keyframes animStar {
   from {
+    -webkit-transform: translatey(0px);
     transform: translatey(0px);
   }
   to {
+    -webkit-transform: translatey(-2000px);
     transform: translatey(-2000px);
   }
 }
 @-webkit-keyframes animStar {
   from {
+    -webkit-transform: translatey(0px);
     transform: translatey(0px);
   }
   to {
+    -webkit-transform: translatey(-2000px);
     transform: translatey(-2000px);
   }
 }
 @-o-keyframes animStar {
   from {
+    -webkit-transform: translatey(0px);
     transform: translatey(0px);
   }
   to {
+    -webkit-transform: translatey(-2000px);
     transform: translatey(-2000px);
   }
 }
