@@ -3,6 +3,11 @@ html {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
 }
+.noscroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
 #stars {
   -webkit-animation-name: animStar;
   -moz-animation-name: animStar;

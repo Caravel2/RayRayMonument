@@ -1,21 +1,29 @@
 $(document).ready(function(){
 
 
+
+
+
+    //-------- 禁止scroll --------//
+    if ($(document).height() > $(window).height()) {
+         var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
+         $('html').addClass('noscroll').css('top',-scrollTop);         
+    }
+
+
+
+
+
     //-------- 預load照片 --------//
     
+
     $('.pic_0').preload(function(){
         $(this).show();
-      });
+    });
 
 
-    // $.preload( 
 
-    //     '../img/miao_0.jpg','../img/miao_1.jpg','../img/miao_2.jpg',
-    //     '../img/miao_3.jpg','../img/miao_4.jpg','../img/miao_5.jpg',
-    //     '../img/miao_6.jpg'
-    
-    // );
-
+   
    
 
     //-------- gradient transition by time --------//
