@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 
-app.set('env','development_local');
+app.set('env','development_aws');
+// app.set('env','development_local');
 // app.set('env','development_heroku');
 
 if('development_local' == app.get('env')){
@@ -9,6 +10,8 @@ if('development_local' == app.get('env')){
   var port = 3000;
 }else if('development_heroku' == app.get('env')){
   var port = process.env.PORT;
+}else if('development_aws' == app.get('env')){
+  var port = process.env.PORT || 8060;
 }
 
 var mounment = require('./controllers/mounment');
@@ -27,7 +30,7 @@ app.set('view engine', 'ejs');
 app.use('/public',express.static( __dirname + '/public'));
 
 
-app.get('/mounment',mounment.index);
+app.get('/',mounment.index);
 app.listen(port, host);
 
 console.log("Express server listening on port %d",port);
