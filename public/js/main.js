@@ -15,74 +15,74 @@ $(document).ready(function(){
     //-------- 幫忙animate星星 --------//
 
 
-    AnimateTranslate (-2000,"infinite");
-    AnimateTranslate2(-2000,"infinite");
-    AnimateTranslate3(-2000,"infinite");
+    // AnimateTranslate (-2000,"infinite");
+    // AnimateTranslate2(-2000,"infinite");
+    // AnimateTranslate3(-2000,"infinite");
 
 
 
-    function AnimateTranslate(angle,repeat) {
-        var duration= 50000;
-        setTimeout(function() {
-            if(repeat && repeat == "infinite") {
-                AnimateTranslate(angle,repeat);
-            } else if ( repeat && repeat > 1) {
-                AnimateTranslate(angle, repeat-1);
-            }
-        },duration)    
-        var $elem = $('#stars');
+    // function AnimateTranslate(angle,repeat) {
+    //     var duration= 50000;
+    //     setTimeout(function() {
+    //         if(repeat && repeat == "infinite") {
+    //             AnimateTranslate(angle,repeat);
+    //         } else if ( repeat && repeat > 1) {
+    //             AnimateTranslate(angle, repeat-1);
+    //         }
+    //     },duration)    
+    //     var $elem = $('#stars');
 
-        $({deg: 0}).animate({deg: angle}, {
-            duration: duration,
-            step: function(now) {
-                $elem.css({
-                    'transform': 'translatey('+ now +'px)'
-                });
-            }
-        });
-    }
+    //     $({deg: 0}).animate({deg: angle}, {
+    //         duration: duration,
+    //         step: function(now) {
+    //             $elem.css({
+    //                 'transform': 'translatey('+ now +'px)'
+    //             });
+    //         }
+    //     });
+    // }
 
-    function AnimateTranslate2(angle,repeat) {
-        var duration= 100000;
-        setTimeout(function() {
-            if(repeat && repeat == "infinite") {
-                AnimateTranslate(angle,repeat);
-            } else if ( repeat && repeat > 1) {
-                AnimateTranslate(angle, repeat-1);
-            }
-        },duration)    
-        var $elem = $('#stars2');
+    // function AnimateTranslate2(angle,repeat) {
+    //     var duration= 100000;
+    //     setTimeout(function() {
+    //         if(repeat && repeat == "infinite") {
+    //             AnimateTranslate(angle,repeat);
+    //         } else if ( repeat && repeat > 1) {
+    //             AnimateTranslate(angle, repeat-1);
+    //         }
+    //     },duration)    
+    //     var $elem = $('#stars2');
 
-        $({deg: 0}).animate({deg: angle}, {
-            duration: duration,
-            step: function(now) {
-                $elem.css({
-                    'transform': 'translatey('+ now +'px)'
-                });
-            }
-        });
-    }
+    //     $({deg: 0}).animate({deg: angle}, {
+    //         duration: duration,
+    //         step: function(now) {
+    //             $elem.css({
+    //                 'transform': 'translatey('+ now +'px)'
+    //             });
+    //         }
+    //     });
+    // }
 
-    function AnimateTranslate3(angle,repeat) {
-        var duration= 150000;
-        setTimeout(function() {
-            if(repeat && repeat == "infinite") {
-                AnimateTranslate(angle,repeat);
-            } else if ( repeat && repeat > 1) {
-                AnimateTranslate(angle, repeat-1);
-            }
-        },duration)    
-        var $elem = $('#stars3');
+    // function AnimateTranslate3(angle,repeat) {
+    //     var duration= 150000;
+    //     setTimeout(function() {
+    //         if(repeat && repeat == "infinite") {
+    //             AnimateTranslate(angle,repeat);
+    //         } else if ( repeat && repeat > 1) {
+    //             AnimateTranslate(angle, repeat-1);
+    //         }
+    //     },duration)    
+    //     var $elem = $('#stars3');
 
-        $({deg: 0}).animate({deg: angle}, {
-            duration: duration,
-            step: function(now) {
-                $elem.css({
-                    'transform': 'translatey('+ now +'px)'
-                });
-            }
-        });
-    }
+    //     $({deg: 0}).animate({deg: angle}, {
+    //         duration: duration,
+    //         step: function(now) {
+    //             $elem.css({
+    //                 'transform': 'translatey('+ now +'px)'
+    //             });
+    //         }
+    //     });
+    // }
     
     
 
@@ -123,10 +123,15 @@ $(document).ready(function(){
     //白天
     if(hour>=6 && hour<18){
 
-      $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%)'});
+      // $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%)'});
+      $("html").css({ 'backgroundColor' : '#E4F1FE' });
       $(".time_text").css({ 
-                              'background':'linear-gradient(#38495a, #38495a)',
-                              '-webkit-background-clip':'text' 
+                              // 'background':'linear-gradient(#000, #000)',
+                              // 'backgroundClip': 'text',
+                              // 'textFillColor': 'transparent',
+
+                              // '-webkit-background-clip':'text'
+                              // 'background' : '#000' 
 
                       });
       }
@@ -147,10 +152,13 @@ $(document).ready(function(){
     //晚上
     else{
 
-      $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)'});
+      // $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)'});
+      $("html").css({ backgroundColor : '#2C3E50' });
       $(".time_text").css({ 
-                              'background':'linear-gradient(#38495a, #fff)',
-                              '-webkit-background-clip':'text' 
+                              'color' : '#fff'
+                              // 'background':'linear-gradient(#fff, #fff)',
+                              // '-webkit-background-clip':'text'
+                              // 'background' : '#000' 
 
                       });
 
@@ -158,9 +166,63 @@ $(document).ready(function(){
     }
 
 
+    // set interval
+    var tid = setInterval(mycode, 200);
+    function mycode() {
+        
+        var pos_1 = $( ".satellite_1" ).position();
+        var pos_2 = $( ".satellite_2" ).position();
+
+        var offset_x =  Math.abs(pos_1.left - pos_2.left);
+        var offset_y =  Math.abs(pos_1.top - pos_2.top);
+
+        if(offset_x < 50 && offset_y < 50){
+
+          // console.log('碰到啦～～～');
 
 
 
+          $( ".satellite_1" ).css("backgroundColor","yellow");
+
+
+          $( ".satellite_2" ).css("backgroundColor","yellow");
+
+
+
+
+
+
+
+
+        }else if(offset_x > 15 && offset_y > 15){
+
+            $( ".satellite_1" ).css("backgroundColor","black");
+
+
+            $( ".satellite_2" ).css("backgroundColor","grey");
+
+
+
+
+        }
+
+
+
+
+
+
+
+        
+    }
+    function abortTimer() { // to be called when you want to stop the timer
+      clearInterval(tid);
+    }
+
+
+
+
+    // var random_index = 5 * Math.random();
+    var click_entry = 0 ;
 
 
     //-------- gallery box --------//
@@ -176,22 +238,59 @@ $(document).ready(function(){
 
     var slider = $('.gallery_box').unslider({
 
-        autoplay:true,
+        
+        speed:1500,
         nav:false,
         arrows:false,
         animation:'fade'
+        
 
     });
 
 
     slider.on('unslider.change', function(event, index, slide) {
       
-      console.log(index);
+      // console.log(index);
       $(".time_text").text(dateArr[index]);
 
 
 
     });
+
+
+    $(".time_text").click(function(e){
+        
+        // console.log('按誰'+color);
+
+        if($(this).text() == "2015.10.13"){
+
+          click_entry += 1;
+
+          if(click_entry > 15){
+
+              console.log('按了'+click_entry+'下');
+              $('.my-popover').addClass('animated fadeInRight');
+              $('.my-popover').css('cursor','pointer');
+              $('.heart_fading').addClass('animated pulsate');
+              $('.heart_btn').addClass('blink');
+
+          }
+
+
+        }
+
+        else{
+
+          click_entry = 0;
+
+        }
+
+        
+
+    });
+
+
+
 
 
     $(".gallery_box").click(function(e){
@@ -222,27 +321,27 @@ $(document).ready(function(){
 
     var pressTimer
 
-    $(".button_box").mouseup(function(){
-      clearTimeout(pressTimer)
-      // Clear timeout
-      return false;
-    }).mousedown(function(){
-      // Set timeout
-      pressTimer = window.setTimeout(function() {
+    // $(".button_box").mouseup(function(){
+    //   clearTimeout(pressTimer)
+    //   // Clear timeout
+    //   return false;
+    // }).mousedown(function(){
+    //   // Set timeout
+    //   pressTimer = window.setTimeout(function() {
 
 
-          console.log("按了2秒鐘");
-          $('.my-popover').addClass('animated fadeInRight');
-          $('.my-popover').css('cursor','pointer');
-          $('.heart_fading').addClass('animated pulsate');
-          $('.heart_btn').addClass('blink');
-          // $(this).popover('show'); 
+    //       console.log("按了2秒鐘");
+    //       $('.my-popover').addClass('animated fadeInRight');
+    //       $('.my-popover').css('cursor','pointer');
+    //       $('.heart_fading').addClass('animated pulsate');
+    //       $('.heart_btn').addClass('blink');
+    //       // $(this).popover('show'); 
 
 
 
-      },2000)
-      return false; 
-    });
+    //   },2000)
+    //   return false; 
+    // });
 
 
 
