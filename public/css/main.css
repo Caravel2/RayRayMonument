@@ -50,7 +50,7 @@ body {
   margin: 0 auto;
   width: 20px;
   height: 20px;
-  background-color: #000;
+  background-color: grey;
   content: "";
   border-radius: 20px;
   transform-origin: 10px 180px;
@@ -70,7 +70,7 @@ body {
   background-color: grey;
   content: "";
   border-radius: 20px;
-  transform-origin: 10px 180px;
+  transform-origin: 5px 175px;
   animation: satellite_2 7s infinite linear;
   transition: all 0.2s ease-in-out;
 }
