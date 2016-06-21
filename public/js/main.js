@@ -259,6 +259,9 @@ $(document).ready(function(){
     });
 
 
+
+    //-------- time_text [click] --------//
+
     $(".time_text").click(function(e){
         
         // console.log('按誰'+color);
@@ -289,6 +292,41 @@ $(document).ready(function(){
         
 
     });
+
+
+    //-------- time_text [tap] --------//
+
+    $(".time_text").on("tap",function(){
+        
+        console.log('tapped');
+
+        if($(this).text() == "2015.10.13"){
+
+          click_entry += 1;
+
+          if(click_entry > 15){
+
+              console.log('按了'+click_entry+'下');
+              $('.my-popover').addClass('animated fadeInRight');
+              $('.my-popover').css('cursor','pointer');
+              $('.heart_fading').addClass('animated pulsate');
+              $('.heart_btn').addClass('blink');
+
+          }
+
+
+        }
+
+        else{
+
+          click_entry = 0;
+
+        }
+
+        
+
+    });
+
 
 
 
