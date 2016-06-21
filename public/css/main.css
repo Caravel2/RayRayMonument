@@ -10,7 +10,7 @@ body {
   position: absolute;
   width: 100%;
   height: 600px;
-  top: 130px;
+  top: 100px;
   text-align: center;
 }
 .main_h1 {
@@ -39,6 +39,7 @@ body {
   height: 320px;
   width: 320px;
   position: relative;
+  margin-top: 50px;
 }
 .satellite_box .satellite_1 {
   display: block;
@@ -54,16 +55,16 @@ body {
   content: "";
   border-radius: 20px;
   transform-origin: 10px 180px;
-  animation: satellite 4s infinite linear;
+  animation: satellite 8.5s infinite linear;
   transition: all 0.2s ease-in-out;
 }
 .satellite_box .satellite_2 {
   display: block;
   position: absolute;
   z-index: 2;
-  left: 0;
+  left: -3px;
   right: 0;
-  top: -10px;
+  top: -4px;
   margin: 0 auto;
   width: 10px;
   height: 10px;
@@ -76,10 +77,10 @@ body {
 }
 @keyframes satellite {
   from {
-    transform: rotate(0deg);
+    transform: rotate(400deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(40deg);
   }
 }
 @keyframes satellite_2 {
@@ -166,8 +167,8 @@ body {
 }
 .my-popover {
   position: relative;
-  top: -38px;
-  left: 100px;
+  top: 0px;
+  left: 0px;
   z-index: 1060;
   display: inline-block;
   opacity: 0;

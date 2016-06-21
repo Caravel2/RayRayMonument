@@ -124,8 +124,9 @@ $(document).ready(function(){
     if(hour>=6 && hour<18){
 
       // $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%)'});
-      $("html").css({ 'backgroundColor' : '#E4F1FE' });
+      $("html").css({ 'backgroundColor' : '#2E3899' });
       $(".time_text").css({ 
+                              'color' : '#fff'
                               // 'background':'linear-gradient(#000, #000)',
                               // 'backgroundClip': 'text',
                               // 'textFillColor': 'transparent',
@@ -182,10 +183,10 @@ $(document).ready(function(){
 
 
 
-          $( ".satellite_1" ).css("backgroundColor","yellow");
+          $( ".satellite_1" ).css("backgroundColor","#F62459");
 
 
-          $( ".satellite_2" ).css("backgroundColor","yellow");
+          $( ".satellite_2" ).css("backgroundColor","#F62459");
 
 
 
@@ -196,7 +197,7 @@ $(document).ready(function(){
 
         }else if(offset_x > 15 && offset_y > 15){
 
-            $( ".satellite_1" ).css("backgroundColor","black");
+            $( ".satellite_1" ).css("backgroundColor","grey");
 
 
             $( ".satellite_2" ).css("backgroundColor","grey");
