@@ -33,6 +33,20 @@ body {
   letter-spacing: 10px;
   color: #000;
 }
+.ui-page {
+  height: 100%;
+}
+.entry_curtain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2E3899;
+  font-size: 44px;
+  padding-top: 340px;
+  z-index: 99;
+  text-align: center;
+  color: #fff;
+}
 .satellite_box {
   margin-left: auto;
   margin-right: auto;
@@ -77,17 +91,21 @@ body {
 }
 @keyframes satellite {
   from {
+    -webkit-transform: rotate(400deg);
     transform: rotate(400deg);
   }
   to {
+    -webkit-transform: rotate(40deg);
     transform: rotate(40deg);
   }
 }
 @keyframes satellite_2 {
   from {
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
   to {
+    -webkit-transform: rotate(540deg);
     transform: rotate(540deg);
   }
 }

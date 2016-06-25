@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 
 
+
     //-------- 禁止scroll --------//
     if ($(document).height() > $(window).height()) {
          var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
@@ -124,6 +125,7 @@ $(document).ready(function(){
     if(hour>=6 && hour<18){
 
       // $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%)'});
+      $("body").css({ 'backgroundColor' : '#2E3899' });
       $(".ui-page").css({ 'backgroundColor' : '#2E3899' });
       $(".time_text").css({ 
                               'color' : '#fff'
@@ -154,6 +156,7 @@ $(document).ready(function(){
     else{
 
       // $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)'});
+      $("body").css({ backgroundColor : '#2C3E50' });
       $(".ui-page").css({ backgroundColor : '#2C3E50' });
       $(".time_text").css({ 
                               'color' : '#fff'
@@ -168,7 +171,7 @@ $(document).ready(function(){
 
 
     // set interval
-    var tid = setInterval(mycode, 200);
+    var tid = setInterval(mycode, 50);
     function mycode() {
         
         var pos_1 = $( ".satellite_1" ).position();
@@ -177,7 +180,7 @@ $(document).ready(function(){
         var offset_x =  Math.abs(pos_1.left - pos_2.left);
         var offset_y =  Math.abs(pos_1.top - pos_2.top);
 
-        if(offset_x < 30 && offset_y < 30){
+        if(offset_x < 15 && offset_y < 15){
 
           // console.log('碰到啦～～～');
 
@@ -195,7 +198,7 @@ $(document).ready(function(){
 
 
 
-        }else if(offset_x > 15 && offset_y > 15){
+        }else if(offset_x > 5 && offset_y > 5){
 
             $( ".satellite_1" ).css("backgroundColor","grey");
 
@@ -399,7 +402,8 @@ $(document).ready(function(){
 
     });
 
-
+    //-------- lodin spinner --------//
+    $('.entry_curtain').fadeOut(2000);
 
 
 
