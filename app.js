@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 
-app.set('env','release_aws');
+// app.set('env','release_aws');
 // app.set('env','development_aws');
-// app.set('env','development_local');
+app.set('env','development_local');
 // app.set('env','development_heroku');
 
 if('development_local' == app.get('env')){
@@ -34,6 +34,7 @@ app.use('/public',express.static( __dirname + '/public'));
 
 
 app.get('/',monument.index);
+app.get('/punchTime',monument.punchTime);
 app.listen(port, host);
 
 console.log("Express server listening on port %d",port);
