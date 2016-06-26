@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 
-
+    
 
 
     //-------- 禁止scroll --------//
@@ -265,36 +265,50 @@ $(document).ready(function(){
 
     //-------- time_text [click] --------//
 
-    $(".time_text").click(function(e){
+    // $(".time_text").click(function(e){
         
-        // console.log('按誰'+color);
+    //     // console.log('按誰'+color);
 
-        if($(this).text() == "2015.10.13"){
+    //     if($(this).text() == "2015.10.13"){
 
-          click_entry += 1;
+    //       click_entry += 1;
 
-          if(click_entry > 15){
+    //       if(click_entry > 15){
 
-              console.log('按了'+click_entry+'下');
-              $('.my-popover').addClass('animated fadeInRight');
-              $('.my-popover').css('cursor','pointer');
-              $('.heart_fading').addClass('animated pulsate');
-              $('.heart_btn').addClass('blink');
-
-          }
+    //           console.log('按了'+click_entry+'下');
+              
 
 
-        }
+    //           // 發送request到後台
+    //           var url = '/punchTime';
 
-        else{
+    //           var posting = $.post(url);
 
-          click_entry = 0;
+    //           posting.done(function(data){
 
-        }
+    //             console.log('成功留下足跡',data);
+    //             $('.my-popover').addClass('animated fadeInRight');
+    //             $('.my-popover').css('cursor','pointer');
+    //             $('.heart_fading').addClass('animated pulsate');
+    //             $('.heart_btn').addClass('blink');
+
+
+    //           });
+
+    //       }
+
+
+    //     }
+
+    //     else{
+
+    //       click_entry = 0;
+
+    //     }
 
         
 
-    });
+    // });
 
 
     //-------- time_text [tap] --------//
@@ -310,10 +324,29 @@ $(document).ready(function(){
           if(click_entry > 15){
 
               console.log('按了'+click_entry+'下');
-              $('.my-popover').addClass('animated fadeInRight');
-              $('.my-popover').css('cursor','pointer');
-              $('.heart_fading').addClass('animated pulsate');
-              $('.heart_btn').addClass('blink');
+              
+
+              // 發送request到後台
+              var url = '/punchTime';
+
+              var posting = $.post(url);
+
+              posting.done(function(data){
+
+                console.log('成功留下足跡',data);
+                $('.my-popover').addClass('animated fadeInRight');
+                $('.my-popover').css('cursor','pointer');
+                $('.heart_fading').addClass('animated pulsate');
+                $('.heart_btn').addClass('blink');
+
+
+              });
+
+
+
+
+
+
 
           }
 

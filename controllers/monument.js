@@ -24,7 +24,7 @@ module.exports.index = function(req,res,next){
 
 module.exports.punchTime = function(req,res,next){
 
-  return res.render({"todayVisit":true});
+  return res.json({"todayVisit":true});
 };
 
 var punchTime = function(){

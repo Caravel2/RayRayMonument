@@ -34,7 +34,7 @@ app.use('/public',express.static( __dirname + '/public'));
 
 
 app.get('/',monument.index);
-app.get('/punchTime',monument.punchTime);
+app.post('/punchTime',monument.punchTime);
 app.listen(port, host);
 
 console.log("Express server listening on port %d",port);
