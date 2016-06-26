@@ -69,11 +69,13 @@ body {
   content: "";
   border-radius: 20px;
   transform-origin: 10px 180px;
-  -webkit-animation: satellite 15s infinite linear;
-  -moz-animation: satellite 15s infinite linear;
-  -ms-animation: satellite 15s infinite linear;
-  -o-animation: satellite 15s infinite linear;
-  animation: satellite 15s infinite linear;
+  display: none;
+  animation-name: satellite;
+  -webkit-animation-name: satellite;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
   transition: all 0.1s ease-in-out;
 }
 .satellite_box .satellite_2 {
@@ -90,12 +92,14 @@ body {
   content: "";
   border-radius: 20px;
   transform-origin: 5px 175px;
-  -webkit-animation: satellite_2 7s infinite linear;
-  -moz-animation: satellite_2 7s infinite linear;
-  -ms-animation: satellite_2 7s infinite linear;
-  -o-animation: satellite_2 7s infinite linear;
-  animation: satellite_2 7s infinite linear;
   transition: all 0.1s ease-in-out;
+  display: none;
+  animation-name: satellite_2;
+  -webkit-animation-name: satellite_2;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s;
 }
 .gallery_box {
   margin-left: auto;
@@ -332,11 +336,9 @@ body {
 @-webkit-keyframes satellite {
   from {
     -webkit-transform: rotate(400deg);
-    transform: rotate(400deg);
   }
   to {
     -webkit-transform: rotate(40deg);
-    transform: rotate(40deg);
   }
 }
 @-moz-keyframes satellite {
@@ -371,22 +373,18 @@ body {
 }
 @keyframes satellite {
   from {
-    -webkit-transform: rotate(400deg);
     transform: rotate(400deg);
   }
   to {
-    -webkit-transform: rotate(40deg);
     transform: rotate(40deg);
   }
 }
 @-webkit-keyframes satellite_2 {
   from {
     -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
   }
   to {
     -webkit-transform: rotate(540deg);
-    transform: rotate(540deg);
   }
 }
 @-moz-keyframes satellite_2 {
@@ -421,11 +419,9 @@ body {
 }
 @keyframes satellite_2 {
   from {
-    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
   to {
-    -webkit-transform: rotate(540deg);
     transform: rotate(540deg);
   }
 }
