@@ -34,7 +34,7 @@ app.use('/public',express.static( __dirname + '/public'));
 
 
 app.get('/',monument.index);
-app.put('/punchTime',monument.punchTime);
+app.post('/punchTime',monument.punchTime);
 app.get('/getPunchTime',monument.getPunchTime);
 app.listen(port, host);
 
