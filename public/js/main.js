@@ -1,99 +1,22 @@
 $(document).ready(function(){
 
+    //-------- 全域變數 --------//
+
+    var now_status = "zero_planet", 
+        sate1 = $( ".satellite_1" ),
+        sate2 = $( ".satellite_2" );
+
 
 
     
-
-
-    //-------- 禁止scroll --------//
+    //-------- 0. 禁止scroll --------//
     if ($(document).height() > $(window).height()) {
          var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
          $('html').addClass('noscroll').css('top',-scrollTop);         
     }
 
 
-
-    //-------- 幫忙animate星星 --------//
-
-
-    // AnimateTranslate (-2000,"infinite");
-    // AnimateTranslate2(-2000,"infinite");
-    // AnimateTranslate3(-2000,"infinite");
-
-
-
-    // function AnimateTranslate(angle,repeat) {
-    //     var duration= 50000;
-    //     setTimeout(function() {
-    //         if(repeat && repeat == "infinite") {
-    //             AnimateTranslate(angle,repeat);
-    //         } else if ( repeat && repeat > 1) {
-    //             AnimateTranslate(angle, repeat-1);
-    //         }
-    //     },duration)    
-    //     var $elem = $('#stars');
-
-    //     $({deg: 0}).animate({deg: angle}, {
-    //         duration: duration,
-    //         step: function(now) {
-    //             $elem.css({
-    //                 'transform': 'translatey('+ now +'px)'
-    //             });
-    //         }
-    //     });
-    // }
-
-    // function AnimateTranslate2(angle,repeat) {
-    //     var duration= 100000;
-    //     setTimeout(function() {
-    //         if(repeat && repeat == "infinite") {
-    //             AnimateTranslate(angle,repeat);
-    //         } else if ( repeat && repeat > 1) {
-    //             AnimateTranslate(angle, repeat-1);
-    //         }
-    //     },duration)    
-    //     var $elem = $('#stars2');
-
-    //     $({deg: 0}).animate({deg: angle}, {
-    //         duration: duration,
-    //         step: function(now) {
-    //             $elem.css({
-    //                 'transform': 'translatey('+ now +'px)'
-    //             });
-    //         }
-    //     });
-    // }
-
-    // function AnimateTranslate3(angle,repeat) {
-    //     var duration= 150000;
-    //     setTimeout(function() {
-    //         if(repeat && repeat == "infinite") {
-    //             AnimateTranslate(angle,repeat);
-    //         } else if ( repeat && repeat > 1) {
-    //             AnimateTranslate(angle, repeat-1);
-    //         }
-    //     },duration)    
-    //     var $elem = $('#stars3');
-
-    //     $({deg: 0}).animate({deg: angle}, {
-    //         duration: duration,
-    //         step: function(now) {
-    //             $elem.css({
-    //                 'transform': 'translatey('+ now +'px)'
-    //             });
-    //         }
-    //     });
-    // }
-    
-    
-
-
-
-
-
-
-
-    //-------- 預load照片 --------//
+    //-------- 1. 預先load照片 --------//
     
 
     $('.pic_0').preload(function(){
@@ -102,15 +25,34 @@ $(document).ready(function(){
 
 
 
+    //-------- 2. 接收planet狀態 --------//
+    
+    var getUrl = '/getPunchTime';
+    var getStatus = $.get(getUrl);
+    getStatus.done(function(data){
 
+      now_status = data.planet_status;
+      console.log('現在status',now_status);
 
+      if(data.planet_status == "one_planet"){
 
+          sate1.css('opacity','1');
+          sate2.css('opacity','0');
 
+      }
 
-   
-   
+      else if(data.planet_status == "two_planet"){
 
-    //-------- gradient transition by time --------//
+          sate1.css('opacity','1');
+          sate2.css('opacity','1');
+      }
+
+      else{}
+
+      
+    }); 
+
+    //-------- 3. 依時序調整背景 --------//
 
 
 
@@ -118,8 +60,7 @@ $(document).ready(function(){
     var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
     var hour = dt.getHours();
 
-
-    console.log("time",time);
+    // console.log("time",time);
 
     //白天
     if(hour>=6 && hour<18){
@@ -139,19 +80,6 @@ $(document).ready(function(){
                       });
       }
     
-
-    //下午
-    // else if(hour>=13 && hour<18){
-
-    //   $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)'});
-    //   $(".time_text").css({ 
-    //                           'background':'linear-gradient(#38495a, #38495a)',
-    //                           '-webkit-background-clip':'text' 
-
-    //                   });
-    // }
-
-
     //晚上
     else{
 
@@ -170,53 +98,35 @@ $(document).ready(function(){
     }
 
 
-    // set interval
+    //-------- 4. 衛星碰撞監聽 --------//
+
+
     var tid = setInterval(mycode, 50);
     function mycode() {
         
-        var pos_1 = $( ".satellite_1" ).position();
-        var pos_2 = $( ".satellite_2" ).position();
+        if(now_status == "two_planet"){
 
-        var offset_x =  Math.abs(pos_1.left - pos_2.left);
-        var offset_y =  Math.abs(pos_1.top - pos_2.top);
+          var pos_1 = sate1.position();
+          var pos_2 = sate2.position();
 
-        if(offset_x < 15 && offset_y < 15){
+          var offset_x =  Math.abs(pos_1.left - pos_2.left);
+          var offset_y =  Math.abs(pos_1.top - pos_2.top);
 
-          // console.log('碰到啦～～～');
+          if(offset_x < 15 && offset_y < 15){
 
+            // console.log('碰撞');
+            sate1.css("backgroundColor","#F62459");
+            sate2.css("backgroundColor","#F62459");
 
+          }else if(offset_x > 5 && offset_y > 5){
 
-          $( ".satellite_1" ).css("backgroundColor","#F62459");
+              sate1.css("backgroundColor","grey");
+              sate2.css("backgroundColor","grey");
 
-
-          $( ".satellite_2" ).css("backgroundColor","#F62459");
-
-
-
-
-
-
+          }
 
 
-        }else if(offset_x > 5 && offset_y > 5){
-
-            $( ".satellite_1" ).css("backgroundColor","grey");
-
-
-            $( ".satellite_2" ).css("backgroundColor","grey");
-
-
-
-
-        }
-
-
-
-
-
-
-
-        
+        }else{}
     }
     function abortTimer() { // to be called when you want to stop the timer
       clearInterval(tid);
@@ -225,11 +135,10 @@ $(document).ready(function(){
 
 
 
-    // var random_index = 5 * Math.random();
-    var click_entry = 0 ;
+    
 
 
-    //-------- gallery box --------//
+    //-------- 5. 輪播相簿 --------//
     var dateArr = [
                       '2012.xx.xx','2010.12.26','2011.03.20',
                       
@@ -238,7 +147,6 @@ $(document).ready(function(){
                       '2015.10.17'
 
                    ];
-
 
     var slider = $('.gallery_box').unslider({
 
@@ -260,112 +168,6 @@ $(document).ready(function(){
 
 
     });
-
-
-
-    //-------- time_text [click] --------//
-
-    // $(".time_text").click(function(e){
-        
-    //     // console.log('按誰'+color);
-
-    //     if($(this).text() == "2015.10.13"){
-
-    //       click_entry += 1;
-
-    //       if(click_entry > 15){
-
-    //           console.log('按了'+click_entry+'下');
-              
-
-
-    //           // 發送request到後台
-    //           var url = '/punchTime';
-
-    //           var posting = $.post(url);
-
-    //           posting.done(function(data){
-
-    //             console.log('成功留下足跡',data);
-    //             $('.my-popover').addClass('animated fadeInRight');
-    //             $('.my-popover').css('cursor','pointer');
-    //             $('.heart_fading').addClass('animated pulsate');
-    //             $('.heart_btn').addClass('blink');
-
-
-    //           });
-
-    //       }
-
-
-    //     }
-
-    //     else{
-
-    //       click_entry = 0;
-
-    //     }
-
-        
-
-    // });
-
-
-    //-------- time_text [tap] --------//
-
-    $(".time_text").on("tap",function(){
-        
-        console.log('tapped');
-
-        if($(this).text() == "2015.10.13"){
-
-          click_entry += 1;
-
-          if(click_entry > 15){
-
-              console.log('按了'+click_entry+'下');
-              
-
-              // 發送request到後台
-              var url = '/punchTime';
-
-              var posting = $.post(url);
-
-              posting.done(function(data){
-
-                console.log('成功留下足跡',data);
-                $('.my-popover').addClass('animated fadeInRight');
-                $('.my-popover').css('cursor','pointer');
-                $('.heart_fading').addClass('animated pulsate');
-                $('.heart_btn').addClass('blink');
-
-
-              });
-
-
-
-
-
-
-
-          }
-
-
-        }
-
-        else{
-
-          click_entry = 0;
-
-        }
-
-        
-
-    });
-
-
-
-
 
 
     $(".gallery_box").click(function(e){
@@ -391,51 +193,79 @@ $(document).ready(function(){
 
     });
 
-    
+    //-------- 6. 按15下啟動靈犀 --------//
 
+    var click_entry = 0;
+    var postUrl = '/punchTime';
 
-    var pressTimer
-
-    // $(".button_box").mouseup(function(){
-    //   clearTimeout(pressTimer)
-    //   // Clear timeout
-    //   return false;
-    // }).mousedown(function(){
-    //   // Set timeout
-    //   pressTimer = window.setTimeout(function() {
-
-
-    //       console.log("按了2秒鐘");
-    //       $('.my-popover').addClass('animated fadeInRight');
-    //       $('.my-popover').css('cursor','pointer');
-    //       $('.heart_fading').addClass('animated pulsate');
-    //       $('.heart_btn').addClass('blink');
-    //       // $(this).popover('show'); 
-
-
-
-    //   },2000)
-    //   return false; 
-    // });
-
-
-
-
-    $('.my-popover').click(function(e){
-
-        if($(this).css("opacity") == 1){
-            // console.log("該關了");
-            $(this).removeClass('animated fadeInRight')
-                   .animate({ opacity : '0' });
-          $('.my-popover').css('cursor','default');
-
-        }
+    $(".time_text").on("tap",function(){
         
 
 
+        console.log('❤');
+
+        if($(this).text() == "2015.10.13"){
+
+          click_entry += 1;
+
+          if(click_entry > 15 && click_entry < 17){
+
+
+
+            $.post(postUrl)
+             .done(function(data){
+
+              
+                  now_status = data.data2file_timeStamp.planet_status;
+
+
+                  if(now_status == "two_planet"){
+
+                    console.log('❤ 靈犀 ❤');
+                    sate1.css('opacity','1');
+                    sate2.css('opacity','1');
+
+                  }
+
+                  else{
+
+                    console.log('❤ 零稀 ❤');
+                    sate1.css('opacity','1');
+                    sate2.css('opacity','0');
+
+
+                  }      
+             });
+
+
+          }else if(click_entry > 31 && click_entry < 33){
+
+            $.post(postUrl)
+             .done(function(data){
+                  
+                  console.log('❤ 靈犀 ❤');
+                  sate1.css('opacity','1');
+                  sate2.css('opacity','1');
+               
+              });
+
+
+
+
+
+          }
+
+        }
+
+        else{
+
+          // click_entry = 0;
+
+        }
     });
 
-    //-------- lodin spinner --------//
+
+    //-------- 7. lodin spinner 消失 --------//
     $('.entry_curtain').fadeOut(2000);
 
 
