@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 
-// app.set('env','release_aws');
+app.set('env','release_aws');
 // app.set('env','development_aws');
-app.set('env','development_local');
+// app.set('env','development_local');
 // app.set('env','development_heroku');
 
 if('development_local' == app.get('env')){
@@ -14,7 +14,7 @@ if('development_local' == app.get('env')){
 }else if('development_aws' == app.get('env')){
   var port = process.env.PORT || 8060;
 }else if('release_aws' == app.get('env')){
-  var port = process.env.PORT || 80;
+  var port = process.env.PORT || 8080;
 }
 
 var monument = require('./controllers/monument');
