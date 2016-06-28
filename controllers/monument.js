@@ -89,6 +89,24 @@ module.exports.getPunchTime = function(req,res,next){
       }
       
     }else{
+
+      var data2file_timeStamp;
+      var hasBeenPunched = punchedChecker(obj.date);
+
+      if(!hasBeenPunched){
+        //first one to punch in this day
+        data2file_timeStamp = {
+          planet_status:"zero_planet"
+        };
+      }
+
+      jsonfile.writeFile(file_timeStamp, data2file_timeStamp, function(err){
+        if (err) throw err;
+        console.log(file_timeStamp + ' is saved! ' + data2file_timeStamp.planet_status);
+        callback(null,data2file_timeStamp);
+      });
+
+
       planet_status = obj.planet_status;
       return res.json({"planet_status":planet_status});
     }
