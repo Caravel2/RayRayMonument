@@ -32,7 +32,7 @@ $(document).ready(function(){
     getStatus.done(function(data){
 
       now_status = data.planet_status;
-      console.log('現在status',now_status);
+      // console.log('現在status',now_status);
 
       if(data.planet_status == "one_planet"){
 
@@ -209,7 +209,7 @@ $(document).ready(function(){
 
         console.log('❤');
 
-        if($(this).text() == "2015.10.13"){
+        if($(this).text() == "2006.06.29"){
 
           click_entry += 1;
 
