@@ -117,26 +117,38 @@ body {
   z-index: 5;
 }
 .gallery_box .pic_0 {
-  background-image: url(../img/miao_0.jpg);
+  background-image: url(../img/croped/miao_00.png);
   display: none;
 }
 .gallery_box .pic_1 {
-  background-image: url(../img/miao_1.jpg);
+  background-image: url(../img/croped/miao_01.png);
 }
 .gallery_box .pic_2 {
-  background-image: url(../img/miao_2.jpg);
+  background-image: url(../img/croped/miao_02.png);
 }
 .gallery_box .pic_3 {
-  background-image: url(../img/miao_3.jpg);
+  background-image: url(../img/croped/miao_03.png);
 }
 .gallery_box .pic_4 {
-  background-image: url(../img/miao_4.jpg);
+  background-image: url(../img/croped/miao_04.png);
 }
 .gallery_box .pic_5 {
-  background-image: url(../img/miao_5.jpg);
+  background-image: url(../img/croped/miao_05.png);
 }
 .gallery_box .pic_6 {
-  background-image: url(../img/miao_6.jpg);
+  background-image: url(../img/croped/miao_06.png);
+}
+.gallery_box .pic_7 {
+  background-image: url(../img/croped/miao_07.png);
+}
+.gallery_box .pic_8 {
+  background-image: url(../img/croped/miao_08.png);
+}
+.gallery_box .pic_9 {
+  background-image: url(../img/croped/miao_09.png);
+}
+.gallery_box .pic_10 {
+  background-image: url(../img/croped/miao_10.png);
 }
 .button_box {
   margin-left: auto;

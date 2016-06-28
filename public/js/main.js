@@ -140,18 +140,20 @@ $(document).ready(function(){
 
     //-------- 5. 輪播相簿 --------//
     var dateArr = [
-                      '2012.xx.xx','2010.12.26','2011.03.20',
+                      '2006.06.29','2007.07.16','2008.06.18',
                       
-                      '2012.03.04','2013.07.26','2014.06.07',
+                      '2009.10.08','2010.12.26','2011.01.05',
 
-                      '2015.10.17'
+                      '2011.03.20','2012.03.04','2013.07.26',
+
+                      '2014.06.07','2015.10.17'
 
                    ];
 
     var slider = $('.gallery_box').unslider({
 
         
-        speed:1500,
+        speed:600,
         nav:false,
         arrows:false,
         animation:'fade'
@@ -170,18 +172,21 @@ $(document).ready(function(){
     });
 
 
+    var gallery_box = $(".gallery_box");
+
     $(".gallery_box").click(function(e){
         
+        var half_window = $( window ).width()/2;
         
 
-        if(e.pageX > 485){
+        if(e.pageX > half_window){
 
             slider.unslider('next');
           // console.log("右半邊！");
 
 
 
-        }else if(e.pageX <= 485){
+        }else if(e.pageX <= half_window){
             slider.unslider('prev');
           // console.log("左半邊！");
 
