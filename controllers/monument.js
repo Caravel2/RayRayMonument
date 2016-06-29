@@ -113,16 +113,17 @@ module.exports.getPunchTime = function(req,res,next){
         data2file_timeStamp = {
           planet_status:"zero_planet"
         };
-      }
+        jsonfile.writeFile(file_timeStamp, data2file_timeStamp, function(err){
+          if (err) throw err;
+          console.log(file_timeStamp + ' is saved! ' + data2file_timeStamp.planet_status);
+          
+          return res.json({"planet_status":data2file_timeStamp.planet_status});
+        });
 
-      jsonfile.writeFile(file_timeStamp, data2file_timeStamp, function(err){
-        if (err) throw err;
-        console.log(file_timeStamp + ' is saved! ' + data2file_timeStamp.planet_status);
+      }else{
         planet_status = obj.planet_status;
         return res.json({"planet_status":planet_status});
-      });
-
-
+      }
 
     }
     
