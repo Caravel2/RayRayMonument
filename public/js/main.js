@@ -4,8 +4,9 @@ $(document).ready(function(){
 
     var now_status = "zero_planet", 
         sate1 = $( ".satellite_1" ),
-        sate2 = $( ".satellite_2" );
-
+        sate2 = $( ".satellite_2" ),
+        dateText = $(".time_text"),
+        galleryBox = $(".gallery_box");
 
 
     
@@ -68,7 +69,7 @@ $(document).ready(function(){
       // $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%)'});
       $("body").css({ 'backgroundColor' : '#2E3899' });
       $(".ui-page").css({ 'backgroundColor' : '#2E3899' });
-      $(".time_text").css({ 
+      dateText.css({ 
                               'color' : '#fff'
                               // 'background':'linear-gradient(#000, #000)',
                               // 'backgroundClip': 'text',
@@ -86,7 +87,7 @@ $(document).ready(function(){
       // $("html").css({ background:'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)'});
       $("body").css({ backgroundColor : '#2C3E50' });
       $(".ui-page").css({ backgroundColor : '#2C3E50' });
-      $(".time_text").css({ 
+      dateText.css({ 
                               'color' : '#fff'
                               // 'background':'linear-gradient(#fff, #fff)',
                               // '-webkit-background-clip':'text'
@@ -133,12 +134,13 @@ $(document).ready(function(){
     }
 
 
+    //-------- 5. 初始日期 --------//
 
-
-    
+    dateText.text('2006.06.29');
 
 
     //-------- 5. 輪播相簿 --------//
+
     var dateArr = [
                       '2006.06.29','2007.07.16','2008.06.18',
                       
@@ -150,7 +152,7 @@ $(document).ready(function(){
 
                    ];
 
-    var slider = $('.gallery_box').unslider({
+    var slider = galleryBox.unslider({
 
         
         speed:600,
@@ -164,17 +166,25 @@ $(document).ready(function(){
 
     slider.on('unslider.change', function(event, index, slide) {
       
-      // console.log(index);
-      $(".time_text").text(dateArr[index]);
+      console.log(index);
 
+      if(index != -1){
+
+        dateText.text(dateArr[index]);
+
+      }else{
+
+        dateText.text(dateArr[10]);
+        
+      }
 
 
     });
 
 
-    var gallery_box = $(".gallery_box");
+    
 
-    $(".gallery_box").click(function(e){
+    galleryBox.click(function(e){
         
         var half_window = $( window ).width()/2;
         
@@ -203,7 +213,7 @@ $(document).ready(function(){
     var click_entry = 0;
     var postUrl = '/punchTime';
 
-    $(".time_text").on("tap",function(){
+    dateText.on("tap",function(){
         
 
 
