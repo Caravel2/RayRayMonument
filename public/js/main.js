@@ -3,8 +3,8 @@ $(document).ready(function(){
     //-------- 全域變數 --------//
 
     var now_status = "zero_planet", 
-        sate1 = $( ".satellite_1" ),
-        sate2 = $( ".satellite_2" ),
+        sate1 = $( "#satellite_1" ),
+        sate2 = $( "#satellite_2" ),
         dateText = $(".time_text"),
         galleryBox = $(".gallery_box");
 

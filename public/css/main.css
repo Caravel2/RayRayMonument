@@ -55,7 +55,7 @@ body {
   position: relative;
   margin-top: 50px;
 }
-.satellite_box .satellite_1 {
+.satellite_box #satellite_1 {
   display: block;
   position: absolute;
   z-index: 2;
@@ -72,7 +72,7 @@ body {
   transition: all 0.1s ease-in-out;
   opacity: 0;
 }
-.satellite_box .satellite_2 {
+.satellite_box #satellite_2 {
   display: block;
   position: absolute;
   z-index: 2;
@@ -331,5 +331,13 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main_container {
+    top: 70px !important;
+  }
+  .satellite_box {
+    margin-top: 20px !important;
   }
 }
