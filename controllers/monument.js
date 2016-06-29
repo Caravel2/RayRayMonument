@@ -98,7 +98,7 @@ module.exports.getPunchTime = function(req,res,next){
             return res.json({"planet_status":results[0]});
         });
         console.log("err",err);
-        throw err;
+        // throw err;
       }
       
     }else{
