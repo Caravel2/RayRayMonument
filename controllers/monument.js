@@ -86,6 +86,18 @@ module.exports.getPunchTime = function(req,res,next){
         });
 
       }else{
+        async.series([
+            function(callback){
+                // do some stuff ...
+                initialPunchTime(callback);
+            }
+        ],
+        // optional callback
+        function(err, results){
+            // results is now equal to ['one', 'two']
+            return res.json({"planet_status":results[0]});
+        });
+        console.log("err",err);
         throw err;
       }
       
