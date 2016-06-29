@@ -27,6 +27,8 @@
           animation-timing-function: linear;
 
 
+
+
 }
 
 
@@ -37,11 +39,17 @@
 @-webkit-keyframes satellite_spin {
   0% {
     -webkit-transform: rotate(400deg);
+    -moz-transform: rotate(400deg);
+    -ms-transform: rotate(400deg);
+    -o-transform: rotate(400deg);
     transform: rotate(400deg);
   }
 
   100% {
     -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
     transform: rotate(40deg);
   }
 }
@@ -49,11 +57,17 @@
 @keyframes satellite_spin {
   0% {
     -webkit-transform: rotate(400deg);
+    -moz-transform: rotate(400deg);
+    -ms-transform: rotate(400deg);
+    -o-transform: rotate(400deg);
     transform: rotate(400deg);
   }
 
   100% {
     -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
     transform: rotate(40deg);
   }
 }
@@ -69,11 +83,17 @@
 @-webkit-keyframes satellite_2_spin {
   0% {
     -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
   100% {
     -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
     transform: rotate(540deg);
   }
 }
@@ -81,11 +101,17 @@
 @keyframes satellite_2_spin {
   0% {
     -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
   100% {
     -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
     transform: rotate(540deg);
   }
 }

@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 
-app.set('env','release_aws');
+// app.set('env','release_aws');
 // app.set('env','development_aws');
-// app.set('env','development_local');
+app.set('env','development_local');
 // app.set('env','development_heroku');
 
 if('development_local' == app.get('env')){
