@@ -166,7 +166,7 @@ $(document).ready(function(){
 
     slider.on('unslider.change', function(event, index, slide) {
       
-      console.log(index);
+      // console.log(index);
 
       if(index != -1){
 
