@@ -31,6 +31,7 @@ var punchTime = function(callback){
 
     var data2file_timeStamp;
     var hasBeenPunched = punchedChecker(obj.date);
+    console.log("hasBeenPunched",hasBeenPunched);
 
     if(hasBeenPunched){
       data2file_timeStamp = {
@@ -90,11 +91,13 @@ module.exports.getPunchTime = function(req,res,next){
       
     }else{
 
+      
       var data2file_timeStamp;
       var hasBeenPunched = punchedChecker(obj.date);
+      console.log("hasBeenPunched",hasBeenPunched);
 
       if(!hasBeenPunched){
-        //first one to punch in this day
+        //reset
         data2file_timeStamp = {
           planet_status:"zero_planet"
         };
@@ -103,7 +106,6 @@ module.exports.getPunchTime = function(req,res,next){
       jsonfile.writeFile(file_timeStamp, data2file_timeStamp, function(err){
         if (err) throw err;
         console.log(file_timeStamp + ' is saved! ' + data2file_timeStamp.planet_status);
-        callback(null,data2file_timeStamp);
       });
 
 
